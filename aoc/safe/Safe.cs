@@ -3,10 +3,12 @@ namespace aoc.safe
     public class Safe
     {
         public int CurrentValue { get; set; }
+        public int WentOverZero { get; set; }
 
         public Safe()
         {
             CurrentValue = 50;
+            WentOverZero = 0;
         }
 
         public void Move(int direction)
@@ -33,6 +35,11 @@ namespace aoc.safe
                 {
                     CurrentValue++;
                 }
+
+                if (CurrentValue == 0)
+                {
+                    WentOverZero++;
+                }
             }
         }
 
@@ -47,6 +54,11 @@ namespace aoc.safe
                 else
                 {
                     CurrentValue--;
+                }
+
+                if (CurrentValue == 0)
+                {
+                    WentOverZero++;
                 }
             }
         }

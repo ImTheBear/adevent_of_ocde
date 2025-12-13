@@ -16,6 +16,6 @@ foreach (int i in safeCombi)
         landedOnZero++;
     }
 }
-
+Console.WriteLine($"Went over zero {safe.WentOverZero} times");
 Console.WriteLine($"Landed on zero {landedOnZero} times");
 
