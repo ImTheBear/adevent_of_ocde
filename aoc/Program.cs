@@ -1,21 +1,12 @@
-﻿using aoc.safe;
-using aoc.parser;
-
-SafeCombiParser parser = new SafeCombiParser("../input/aoc1.txt");
-IList<int> safeCombi = parser.GetInput();
-
-Safe safe = new();
-int landedOnZero = 0;
-
-foreach (int i in safeCombi)
+﻿
+namespace aoc
 {
-    safe.Move(i);
-
-    if (safe.CurrentValue == 0)
+    class Program
     {
-        landedOnZero++;
+        static void Main(string[] args)
+        {
+            Aoc1 aoc1 = new Aoc1();
+            aoc1.Run();
+        }
     }
 }
-Console.WriteLine($"Went over zero {safe.WentOverZero} times");
-Console.WriteLine($"Landed on zero {landedOnZero} times");
-
