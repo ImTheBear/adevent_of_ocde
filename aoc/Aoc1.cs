@@ -7,7 +7,6 @@ namespace aoc
     {
         public void Run()
         {
-
             SafeCombiParser parser = new SafeCombiParser("../input/aoc1.txt");
             IList<int> safeCombi = parser.GetInput();
 
