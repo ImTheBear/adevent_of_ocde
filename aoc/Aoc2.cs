@@ -6,9 +6,16 @@ namespace aoc
     public class Aoc2
     {
         private long invalidIdSum = 0;
+        private string directory;
+
+        public Aoc2(string input_directory)
+        {
+            directory = input_directory;
+        }
+
         public void Run()
         {
-            IdParser parser = new IdParser("../input/aoc2.txt");
+            IdParser parser = new IdParser(directory);
             IList<IdRange> idRanges = parser.GetInput();
 
             foreach (IdRange idRange in idRanges)

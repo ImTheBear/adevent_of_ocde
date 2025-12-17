@@ -18,11 +18,8 @@ namespace aoc.parser
             {
                 using (StreamReader reader = new StreamReader(_input))
                 {
-                    while (reader.Peek() >= 0)
-                    {
-                        string? line = reader.ReadLine();
-                        SplitLineIntoIds(line);
-                    }
+                    string? line = reader.ReadLine();
+                    SplitLineIntoIds(line);
                 }
             }
             catch (Exception e)
@@ -38,10 +35,11 @@ namespace aoc.parser
         {
             if (line == null) return;
             string[] ids = line.Split(',');
+
             foreach (string id in ids)
             {
                 string[] idRange = id.Split('-');
-                _idRanges.Add(new IdRange(int.Parse(idRange[0]), int.Parse(idRange[1])));
+                _idRanges.Add(new IdRange(long.Parse(idRange[0]), long.Parse(idRange[1])));
             }
         }
     }

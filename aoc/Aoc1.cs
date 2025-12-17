@@ -5,9 +5,16 @@ namespace aoc
 {
     public class Aoc1
     {
+        private string directory;
+
+        public Aoc1(string input_directory)
+        {
+            directory = input_directory;
+        }
+
         public void Run()
         {
-            SafeCombiParser parser = new SafeCombiParser("../input/aoc1.txt");
+            SafeCombiParser parser = new SafeCombiParser(directory);
             IList<int> safeCombi = parser.GetInput();
 
             Safe safe = new();
